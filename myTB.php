@@ -1,6 +1,6 @@
 <?php
 $dirBin=dirname(__FILE__);
-include($dirBin."/allen_config.php");
+include($dirBin."/myTB__config.php");
 $th="";
 $columnsRecord='"columns": [
 ';
@@ -38,13 +38,13 @@ var editor; // use a global for the submit and return data rendering in the exam
 
 $(document).ready(function() {
 	editor = new $.fn.dataTable.Editor( {
-		ajax: "allen_staff.php",
+		ajax: "myTB_staff.php",
 		table: "#myTable"
 	} );
 
 	$('#myTable').DataTable( {
 		dom: "Bfrtip",
-		ajax: "allen_staff.php",
+		ajax: "myTB_staff.php",
 		<?=$columnsRecord;?>
 		select: true,
         /*lengthMenu: [
