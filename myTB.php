@@ -1,6 +1,6 @@
 <?php
 $dirBin=dirname(__FILE__);
-include($dirBin."/myTB__config.php");
+include($dirBin."/myTB_config.php");
 $th="";
 $columnsRecord='"columns": [
 ';
