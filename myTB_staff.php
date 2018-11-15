@@ -1,6 +1,6 @@
 <?php
 $dirBin=dirname(__FILE__);
-include($dirBin."/allen_config.php");
+include($dirBin."/myTB_config.php");
 
 
 /*
@@ -31,7 +31,7 @@ for($i=0;$i<count($columnArr);$i++){
 
 	
 // Build our Editor instance and process the data coming from _POST
-Editor::inst( $db, 'datatables_demo' )
+Editor::inst( $db, $urTB )
 	->fields($inst)
     #->where( 'office', 'London' )
     #->where( 'salary', 100000, '>' )
