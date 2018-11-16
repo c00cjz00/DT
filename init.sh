@@ -11,8 +11,8 @@ git config --global user.email summerhill001@gmail.com
 #git pull
 git checkout master
 #git rm crontab-crontab.php crontab-sftp.php
-#git rm --cached myTB_config.php
-java -jar bfg-1.12.16.jar --delete-files myTB_config.php
+git rm bfg-1.12.16.jar
+java -jar ../removeHistory/bfg-1.12.16.jar --delete-files *config*.php
 git add *
 git commit -m "init"
 # 上傳至遠端
