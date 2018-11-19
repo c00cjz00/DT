@@ -76,18 +76,21 @@ $(document).ready(function() {
 		},		
 		<?=$columnsRecord;?>
 		select: true,
-        /*lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-        ],*/		
+		/*lengthMenu: [
+		[ 10, 25, 50, -1 ],
+		[ '10 rows', '25 rows', '50 rows', 'Show all' ]
+		],*/		
 		buttons: [
-            /*'pageLength',*/		
+		        /*'pageLength',*/
 			{ extend: "remove", editor: editor }
 		],
+		pageLength:500,
 		scrollX: true,		
-        scrollY:        '65vh',
-        scrollCollapse: true,
-        paging:         false		
+		scrollY:        '65vh',
+                deferRender:    true,
+                scroller:       true,		                
+                scrollCollapse: true
+                /*paging:         true*/
 	} );
 } );
 
