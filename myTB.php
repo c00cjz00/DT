@@ -2,6 +2,10 @@
 $TB_name="nuke_cities";
 //$columnLimitArr=array("title","author"); 
 $limitColumn='id'; $limitValue='none';  $equalValue="!=";
+$today  = mktime( date("H") , date("i"), date("s"), date("m")  , date("d"), date("Y"));
+$encodeKey=base64_encode($today);
+
+
 
 $dirBin=dirname(__FILE__);
 include($dirBin."/myTB_config.php");
@@ -10,7 +14,8 @@ $con=mysqli_connect($DB_host,$DB_user,$DB_pass,$DB_name);
 if (mysqli_connect_errno()){
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$getLinks="TB_name=".$TB_name."&limitColumn=".$limitColumn."&limitValue=".$limitValue."&equalValue=".$equalValue;
+$getLinks="TB_name=".$TB_name."&limitColumn=".$limitColumn."&limitValue=".$limitValue."&equalValue=".$equalValue."&encodeKey=".$encodeKey;
+
 
  $th=""; $columnsRecord='"columns": ['; $columnArr=array();
 if (!isset($columnLimitArr)) $columnLimitArr=array();

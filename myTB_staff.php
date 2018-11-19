@@ -28,12 +28,17 @@ if (!isset($_GET['TB_name'])) { echo "no TB_name\n"; exit(); }
 if (!isset($_GET['limitColumn'])) { echo "no limitColumn\n"; exit(); }
 if (!isset($_GET['limitValue'])) { echo "no limitValue\n"; exit(); }
 if (!isset($_GET['equalValue'])) { echo "no equalValue\n"; exit(); }
+if (!isset($_GET['encodeKey'])) { echo "no encodeKey\n"; exit(); }
 $columnArr=$_GET['c'];
 $TB_name=$_GET['TB_name'];
 $limitColumn=$_GET['limitColumn']; 
 $limitValue=$_GET['limitValue']; 
 $equalValue=$_GET['equalValue'];
-
+$encodeKey=$_GET['encodeKey'];
+$today  = mktime( date("H") , date("i"), date("s"), date("m")  , date("d"), date("Y"));
+$decodeKey=base64_decode($encodeKey);
+$timeDiff=($today-$decodeKey);
+if ($timeDiff>1)  { echo "key error\n"; exit(); }
 
 for($i=0;$i<count($columnArr);$i++){ 
 	$tmpArr=explode(":",trim($columnArr[$i]));
