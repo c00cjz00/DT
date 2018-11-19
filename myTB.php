@@ -1,6 +1,6 @@
 <?php
-$TB_name="nuke_cities";
-//$columnLimitArr=array("title","author"); 
+$TB_name="aroTable";
+$columnLimitArr=array("a01","a06"); 
 $limitColumn='id'; $limitValue='none';  $equalValue="!=";
 $today  = mktime( date("H") , date("i"), date("s"), date("m")  , date("d"), date("Y"));
 $encodeKey=base64_encode($today);
