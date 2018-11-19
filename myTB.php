@@ -89,7 +89,7 @@ $(document).ready(function() {
 		        /*'pageLength',*/
 			{ extend: "remove", editor: editor }
 		],
-		pageLength:500,
+		pageLength:<?=$pageLength;?>,
 		scrollX: true,		
 		scrollY:        '65vh',
                 deferRender:    true,
